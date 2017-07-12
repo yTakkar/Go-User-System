@@ -1,0 +1,23 @@
+{
+  "name": "go-social-network",
+  "version": "1.0.0",
+  "description": "A very simple Golang social-network",
+  "main": "index.js",
+  "scripts": {
+    "start": "go run main.go",
+    "less": "less-watch-compiler",
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p --watch"
+  },
+  "author": "takkar <shtakkar@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "handy-notification": "^1.0.23",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0"
+  }
+}
