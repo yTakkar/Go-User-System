@@ -9,7 +9,7 @@ import (
 
 // DB function
 func DB() *sql.DB {
-	db, _ := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db")
+	db, _ := sql.Open("mysql", "root:iamaprogrammer@tcp(127.0.0.1:3306)/go")
 	err := db.Ping()
 	if err != nil {
 		panic(err)
