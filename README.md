@@ -18,4 +18,12 @@ Following packages should be installed.
 1. Open PHPMyAdmin, create a db & import `db.sql`.
 2. Go to `models/db.go` & change DB connection settings.
 3. My root folder name is `Go-User-System`, if yours is different then go ahead & change it as it used for imports. It can be done easily by searching the whole project.
-4. Enjoy!!
+4. Now run it.
+	```javascript
+	go run main.go
+	```
+5. Check your result. Type..
+	```javascript
+	localhost:[PORT] PORT=1110 (By default)
+	```
+6. Enjoy!!
