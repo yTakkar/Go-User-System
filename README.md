@@ -22,8 +22,8 @@ Following packages should be installed.
 	```javascript
 	go run main.go
 	```
-5. Check your result. Type..
-	```javascript
+5. Run the app in browser.
+	```
 	localhost:[PORT] PORT=1110 (By default)
 	```
 6. Enjoy!!
