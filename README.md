@@ -15,15 +15,32 @@ Following packages should be installed.
 6. [sessions](github.com/gorilla/sessions)
 
 # Usage
+1. First install all the dependencies.
+```javascript
+npm install 
+OR 
+yarn
+```
+
 1. Open PHPMyAdmin, create a db & import `db.sql`.
-2. Go to `models/db.go` & change DB connection settings.
+2. Create a `.env` file & insert the following code. Repalce values with yours.
+```javascript
+PORT=PORT (default= 1100)  [STRING]
+DB_USER=DB USER [STRING]
+DB_PASSWORD=DB PASSWORD [STRING]
+DB=DB YOU JUST CREATED [STRING]
+```
+
 3. My root folder name is `Go-User-System`, if yours is different then go ahead & change it as it used for imports. It can be done easily by searching the whole project.
+
 4. Now run it.
 	```javascript
 	go run main.go
 	```
-5. Check your result. Type..
+
+5. Run the app in browser.
 	```javascript
 	localhost:[PORT] PORT=1110 (By default)
 	```
+
 6. Enjoy!!

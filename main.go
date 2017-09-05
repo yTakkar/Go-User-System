@@ -2,10 +2,16 @@ package main
 
 import (
 	R "Go-User-System/routes"
+	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/julienschmidt/httprouter"
 	"github.com/urfave/negroni"
 )
+
+func init() {
+	godotenv.Load()
+}
 
 func main() {
 
@@ -25,5 +31,5 @@ func main() {
 
 	server := negroni.Classic()
 	server.UseHandler(router)
-	server.Run(":1100")
+	server.Run(os.Getenv("PORT"))
 }
