@@ -7,12 +7,12 @@ Visit [this](https://github.com/yTakkar/Go-React-User-System) for single-page us
 
 # Requirements
 Following packages should be installed.
-1. [httprouter](github.com/julienschmidt/httprouter)
-2. [negroni](github.com/urfave/negroni)
-3. [checkmail](github.com/badoux/checkmail)
-4. [MySQL driver](github.com/go-sql-driver/mysql)
-5. [bcrypt](golang.org/x/crypto/bcrypt)
-6. [sessions](github.com/gorilla/sessions)
+1. [httprouter](https://github.com/julienschmidt/httprouter)
+2. [negroni](https://github.com/urfave/negroni)
+3. [checkmail](https://github.com/badoux/checkmail)
+4. [MySQL driver](https://github.com/go-sql-driver/mysql)
+5. [bcrypt](https://golang.org/x/crypto/bcrypt)
+6. [sessions](https://github.com/gorilla/sessions)
 
 # Usage
 1. Open PHPMyAdmin, create a db & import `db.sql`.
