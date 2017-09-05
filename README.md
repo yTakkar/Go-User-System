@@ -6,13 +6,15 @@ User System created with Golang. It's really fun with Golang. Don't believe me? 
 Visit [this](https://github.com/yTakkar/Go-React-User-System) for single-page user-system with React & Golang!!
 
 # Requirements
-Following packages should be installed.
-1. [httprouter](https://github.com/julienschmidt/httprouter)
-2. [negroni](https://github.com/urfave/negroni)
-3. [checkmail](https://github.com/badoux/checkmail)
-4. [MySQL driver](https://github.com/go-sql-driver/mysql)
-5. [bcrypt](https://golang.org/x/crypto/bcrypt)
-6. [sessions](https://github.com/gorilla/sessions)
+1. Make sure you keep this project inside `src/` of your Golang project folder.
+2. Following packages should be installed.
+    1. [httprouter](https://github.com/julienschmidt/httprouter)
+    2. [negroni](https://github.com/urfave/negroni)
+    3. [checkmail](https://github.com/badoux/checkmail)
+    4. [MySQL driver](https://github.com/go-sql-driver/mysql)
+    5. [bcrypt](https://golang.org/x/crypto/bcrypt)
+    6. [sessions](https://github.com/gorilla/sessions)
+    7. [godotenv](https://github.com/joho/godotenv)
 
 # Usage
 1. First install all the dependencies.
