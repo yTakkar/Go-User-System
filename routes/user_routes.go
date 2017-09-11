@@ -2,8 +2,6 @@ package routes
 
 import (
 	M "Go-User-System/models"
-	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -52,9 +50,9 @@ func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		Response["mssg"] = "Email already exists!"
 	} else {
 
-		hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
-		if err != nil {
-			log.Fatal(err)
+		hash, hashErr := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+		if hashErr != nil {
+			log.Fatal(hashErr)
 		}
 
 		_, insErr := db.Exec(
@@ -72,13 +70,7 @@ func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	}
 
-	final, err := json.Marshal(Response)
-	if err != nil {
-		panic(err)
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(final)
+	M.JSON(w, r, Response)
 
 }
 
@@ -99,11 +91,13 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	db.QueryRow("SELECT COUNT(id) AS userCount, id, username, password FROM users WHERE username=?", rusername).Scan(&userCount, &id, &username, &password)
 
+	encErr := bcrypt.CompareHashAndPassword([]byte(password), []byte(rpassword))
+
 	if rusername == "" || rpassword == "" {
 		Response["mssg"] = "Some values are missing!"
 	} else if userCount == 0 {
 		Response["mssg"] = "Invalid username!"
-	} else if encErr := bcrypt.CompareHashAndPassword([]byte(password), []byte(rpassword)); encErr != nil {
+	} else if encErr != nil {
 		Response["mssg"] = "Invalid password!"
 	} else {
 
@@ -118,13 +112,6 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	}
 
-	final, err := json.Marshal(Response)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println(userCount)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(final)
+	M.JSON(w, r, Response)
 
 }
