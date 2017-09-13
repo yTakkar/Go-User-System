@@ -107,7 +107,7 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		session.Save(r, w)
 
 		R["success"] = true
-		R["mssg"] = "Helo, " + username + "!"
+		R["mssg"] = "Hello, " + username + "!"
 		R["user"] = id
 
 	}
