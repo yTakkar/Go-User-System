@@ -27,7 +27,7 @@ func AllSessions(r *http.Request) (interface{}, interface{}) {
 	return id, username
 }
 
-// JSON function
+// JSON function which returns response as json
 func JSON(w http.ResponseWriter, r *http.Request, resp interface{}) {
 	final, err := json.Marshal(resp)
 	if err != nil {
