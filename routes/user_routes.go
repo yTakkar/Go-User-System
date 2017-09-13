@@ -17,7 +17,7 @@ import (
 
 // UserRegister function
 func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	Response := make(map[string]interface{})
+	R := make(map[string]interface{})
 
 	username := strings.TrimSpace(r.PostFormValue("username"))
 	email := strings.TrimSpace(r.PostFormValue("email"))
@@ -37,17 +37,17 @@ func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	db.QueryRow("SELECT COUNT(id) AS emailCount FROM users WHERE email=?", email).Scan(&emailCount)
 
 	if username == "" || email == "" || password == "" || passwordAgain == "" {
-		Response["mssg"] = "Some values are missing!"
+		R["mssg"] = "Some values are missing!"
 	} else if len(username) < 4 || len(username) > 32 {
-		Response["mssg"] = "Username should be between 4 and 32"
+		R["mssg"] = "Username should be between 4 and 32"
 	} else if mailErr != nil {
-		Response["mssg"] = "Invalid Format!"
+		R["mssg"] = "Invalid Format!"
 	} else if password != passwordAgain {
-		Response["mssg"] = "Passwords don't match"
+		R["mssg"] = "Passwords don't match"
 	} else if userCount > 0 {
-		Response["mssg"] = "Username already exists!"
+		R["mssg"] = "Username already exists!"
 	} else if emailCount > 0 {
-		Response["mssg"] = "Email already exists!"
+		R["mssg"] = "Email already exists!"
 	} else {
 
 		hash, hashErr := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
@@ -65,18 +65,18 @@ func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 			log.Fatal(insErr)
 		}
 
-		Response["mssg"] = "You are now registered!"
-		Response["success"] = true
+		R["mssg"] = "You are now registered!"
+		R["success"] = true
 
 	}
 
-	M.JSON(w, r, Response)
+	M.JSON(w, r, R)
 
 }
 
 // UserLogin function
 func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	Response := make(map[string]interface{})
+	R := make(map[string]interface{})
 
 	rusername := strings.TrimSpace(r.PostFormValue("username"))
 	rpassword := strings.TrimSpace(r.PostFormValue("password"))
@@ -94,11 +94,11 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	encErr := bcrypt.CompareHashAndPassword([]byte(password), []byte(rpassword))
 
 	if rusername == "" || rpassword == "" {
-		Response["mssg"] = "Some values are missing!"
+		R["mssg"] = "Some values are missing!"
 	} else if userCount == 0 {
-		Response["mssg"] = "Invalid username!"
+		R["mssg"] = "Invalid username!"
 	} else if encErr != nil {
-		Response["mssg"] = "Invalid password!"
+		R["mssg"] = "Invalid password!"
 	} else {
 
 		session := M.GetSession(r)
@@ -106,12 +106,12 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		session.Values["username"] = username
 		session.Save(r, w)
 
-		Response["success"] = true
-		Response["mssg"] = "You are now logged in"
-		Response["user"] = id
+		R["success"] = true
+		R["mssg"] = "Helo, " + username + "!"
+		R["user"] = id
 
 	}
 
-	M.JSON(w, r, Response)
+	M.JSON(w, r, R)
 
 }
