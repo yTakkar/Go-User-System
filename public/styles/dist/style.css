@@ -1,12 +1,15 @@
 body {
+  font-family: 'Open Sans', 'Roboto', Tahoma, arial, sans-serif;
   background: #fbfbfb;
-  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-size: 13px;
+  color: #3d464d;
+  font-weight: normal;
 }
 .handy-notify {
   position: fixed;
   background: #333;
   left: 2%;
-  color: white;
+  color: #fff;
   border-radius: 3px;
   padding: 12px 80px 12px 25px;
   font-size: 15px;

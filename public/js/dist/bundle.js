@@ -10353,21 +10353,7 @@ var Notify = function(options){
     action    = settings.action,
     done      = settings.done;
 
-  $(selector)
-    .css({
-        "position": "fixed",
-        "background": "#333",
-        "left": "2%",
-        "color": "white",
-        "border-radius": "3px",
-        "padding": "12px 80px 12px 25px",
-        "font-size": "15px",
-        "cursor": "pointer",
-        "text-align": "left",
-        "z-index": "30000",
-        "top": "105%"
-    })
-    .find('span').html(value);
+  $(selector).find('span').html(value);
 
   $(selector).animate({
     top: afterTop
