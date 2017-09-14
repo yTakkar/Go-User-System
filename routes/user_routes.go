@@ -65,7 +65,7 @@ func UserRegister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 			log.Fatal(insErr)
 		}
 
-		R["mssg"] = "You are now registered!"
+		R["mssg"] = username + ", you can now login!!"
 		R["success"] = true
 
 	}
@@ -107,7 +107,7 @@ func UserLogin(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		session.Save(r, w)
 
 		R["success"] = true
-		R["mssg"] = "Helo, " + username + "!"
+		R["mssg"] = "Hello, " + username + "!"
 		R["user"] = id
 
 	}
