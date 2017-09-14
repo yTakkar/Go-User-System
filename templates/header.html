@@ -14,18 +14,20 @@
 </head>
 <body>
 
-    <div>
-        <ul>
-            {{ if .UserID }}
-                <li><a href="/">Home</a></li>
-                <li><a href="/profile/{{.UserID}}">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-            {{ else }}
-                <li><a href="/welcome">Home</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-            {{ end }}
-        </ul>
+    <div class="header_loggedin">
+
+      <div class="left">
+        {{ if .UserID }}
+          <a href="/">Home</a>
+          <a href="/profile/{{.UserID}}">Profile</a>
+          <a href="/logout">Logout</a>
+        {{ else }}
+          <a href="/welcome">Home</a>
+          <a href="/register">Register</a>
+          <a href="/login">Login</a>
+        {{ end }}
+      </div>
+
     </div>
 
 {{ end }}

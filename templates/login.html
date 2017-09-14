@@ -1,14 +1,17 @@
 {{ template "header" . }}
 
-<form class="login" action="" method="post">
+<div class="aligner">
+  <form class="login" action="" method="post">
 
-  <label for="">Username</label><br>
-  <input type="text" name="username" value="" class="l_username" required autofocus spellcheck="false" ><br><br>
+    <label for="">Username</label><br>
+    <input type="text" name="username" value="" class="l_username" required autofocus spellcheck="false" ><br><br>
 
-  <label for="">Password</label><br>
-  <input type="password" name="password" value="" class="l_password" required spellcheck="false"><br><br>
+    <label for="">Password</label><br>
+    <input type="password" name="password" value="" class="l_password" required spellcheck="false" ><br><br>
 
-  <input type="submit" name="" class="l_submit" value="Login">
-</form>
+    <input type="submit" name="" class="l_submit" value="Login">
+  </form>
+</div>
+
 
 {{ template "footer" . }}

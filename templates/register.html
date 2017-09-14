@@ -1,20 +1,22 @@
 {{ template "header" . }}
 
-<form class="register" action="" method="post">
+<div class="aligner">
+  <form class="register" action="" method="post">
 
-  <label for="">Username</label><br>
-  <input type="text" name="username" value="" class="r_username" required autofocus spellcheck="false" ><br><br>
+    <label for="">Username</label><br>
+    <input type="text" name="username" value="" class="r_username" required autofocus spellcheck="false" ><br><br>
 
-  <label for="">Email</label><br>
-  <input type="email" name="email" value="" class="r_email" required spellcheck="false"><br><br>
+    <label for="">Email</label><br>
+    <input type="email" name="email" value="" class="r_email" required spellcheck="false"><br><br>
 
-  <label for="">Password</label><br>
-  <input type="password" name="password" value="" class="r_password" required spellcheck="false"><br><br>
+    <label for="">Password</label><br>
+    <input type="password" name="password" value="" class="r_password" required spellcheck="false"><br><br>
 
-  <label for="">Password again</label><br>
-  <input type="password" name="password_again" value="" class="r_password_again" required spellcheck="false"><br><br>
+    <label for="">Password again</label><br>
+    <input type="password" name="password_again" value="" class="r_password_again" required spellcheck="false"><br><br>
 
-  <input type="submit" name="" class="r_submit" value="Register">
-</form>
+    <input type="submit" name="" class="r_submit" value="Register">
+  </form>
+</div>
 
 {{ template "footer" . }}

@@ -5,6 +5,14 @@ body {
   color: #3d464d;
   font-weight: normal;
 }
+a {
+  text-decoration: none;
+  color: #2895F1;
+  outline: none;
+}
+li {
+  list-style: none;
+}
 .handy-notify {
   position: fixed;
   background: #333;
@@ -17,4 +25,43 @@ body {
   text-align: left;
   z-index: 3;
   top: 105%;
+}
+.header_loggedin {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  z-index: 2;
+  top: 0px;
+}
+.header_loggedin a {
+  font-size: 14px;
+  color: #1b2733;
+  margin-left: 7px;
+  padding: 5px 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.header_loggedin a:hover {
+  background: #f7f9fa;
+}
+.header_loggedin a:focus {
+  background: #f7f9fa;
+}
+.header_loggedin .left {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+  left: 25px;
+  margin-right: 67%;
+}
+.header_loggedin .right {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
+.aligner {
+  position: relative;
+  top: 60px;
 }
